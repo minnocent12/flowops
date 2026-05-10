@@ -1,0 +1,9 @@
+﻿target/
+*.class
+*.jar
+*.war
+*.log
+.idea/
+*.iml
+.env
+flowops_refactored_project_plan.html
