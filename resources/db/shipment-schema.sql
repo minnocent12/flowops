@@ -8,3 +8,6 @@ CREATE TABLE IF NOT EXISTS shipments (
     status       VARCHAR(50)  NOT NULL DEFAULT 'CREATED',
     created_at   TIMESTAMP    NOT NULL DEFAULT now()
 );
+
+CREATE INDEX IF NOT EXISTS idx_shipments_warehouse ON shipments(warehouse_id);
+CREATE INDEX IF NOT EXISTS idx_shipments_carrier   ON shipments(carrier);
