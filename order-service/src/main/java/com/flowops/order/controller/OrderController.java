@@ -41,4 +41,10 @@ public class OrderController {
     public List<OrderResponse> getAllOrders() {
         return svc.getAllOrders();
     }
+
+    @PatchMapping("/{id}/status")
+    @Operation(summary = "Update order status", description = "Called internally by warehouse and shipment services")
+    public OrderResponse updateStatus(@PathVariable UUID id, @RequestParam String status) {
+        return svc.updateStatus(id, status);
+    }
 }

@@ -7,3 +7,5 @@
 *.iml
 .env
 flowops_refactored_project_plan.html
+
+.claude/

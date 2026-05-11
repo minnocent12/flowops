@@ -79,6 +79,13 @@ public class OrderService {
         return repo.findAll().stream().map(this::toResponse).toList();
     }
 
+    public OrderResponse updateStatus(UUID id, String status) {
+        Order order = repo.findById(id)
+            .orElseThrow(() -> new RuntimeException("Order not found: " + id));
+        order.setStatus(status);
+        return toResponse(repo.save(order));
+    }
+
     private OrderResponse toResponse(Order o) {
         return new OrderResponse(o.getId(), o.getCustomerId(), o.getSku(),
                                  o.getQuantity(), o.getStatus(), o.getCreatedAt());

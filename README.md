@@ -1,5 +1,7 @@
 # FlowOps — Fulfillment Order Orchestrator
 
+![CI](https://github.com/minnocent12/flowops/actions/workflows/ci.yml/badge.svg)
+
 A production-grade distributed system simulating how large retailers like Home Depot route orders across fulfillment centers. Built as an internship preparation project for the Home Depot Supply Chain Technology Group.
 
 ## Architecture

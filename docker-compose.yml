@@ -103,6 +103,7 @@ services:
       SPRING_DATASOURCE_PASSWORD: flowops123
       KAFKA_BOOTSTRAP_SERVERS: kafka:29092
       INVENTORY_SERVICE_URL: http://inventory-service:8082
+      ORDER_SERVICE_URL: http://order-service:8081
     depends_on:
       postgres:
         condition: service_healthy
@@ -119,6 +120,7 @@ services:
       SPRING_DATASOURCE_USERNAME: flowops
       SPRING_DATASOURCE_PASSWORD: flowops123
       KAFKA_BOOTSTRAP_SERVERS: kafka:29092
+      ORDER_SERVICE_URL: http://order-service:8081
     depends_on:
       postgres:
         condition: service_healthy

@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.core.*;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -18,6 +19,9 @@ public class KafkaConfig {
 
     @Value("${kafka.bootstrap-servers}")
     private String bootstrapServers;
+
+    @Bean
+    public RestTemplate restTemplate() { return new RestTemplate(); }
 
     @Bean
     public ProducerFactory<String, String> producerFactory() {

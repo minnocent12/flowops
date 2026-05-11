@@ -26,4 +26,10 @@ public class InventoryClient {
         return restTemplate.exchange(url, HttpMethod.GET, null,
             new ParameterizedTypeReference<List<WarehouseStock>>() {}).getBody();
     }
+
+    public void deductStock(String warehouseId, String sku, int qty) {
+        String url = inventoryUrl + "/api/inventory/deduct?warehouseId=" + warehouseId
+                     + "&sku=" + sku + "&quantity=" + qty;
+        restTemplate.postForObject(url, null, Void.class);
+    }
 }
